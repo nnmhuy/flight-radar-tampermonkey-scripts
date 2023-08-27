@@ -1,14 +1,18 @@
 // ==UserScript==
 // @name         Alarm reminder
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        *://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=flightradar24.com
 // @grant        none
+// @downloadURL  https://github.com/nnmhuy/flight-radar-tampermonkey-scripts/raw/main/Alarm%20reminder.user.js
+// @updateURL    https://github.com/nnmhuy/flight-radar-tampermonkey-scripts/raw/main/Alarm%20reminder.user.js
 // ==/UserScript==
 
+
+// test auto update
 (function() {
     'use strict';
     var audio = new Audio('https://www.fesliyanstudios.com/soundeffects/2019-05-28/Exports/Originals/Alarm-Fast-High-Pitch-B1-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3')
