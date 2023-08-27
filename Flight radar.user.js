@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name         Flight radar (new)
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.flightradar24.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=flightradar24.com
 // @grant        none
+// @downloadURL  https://github.com/nnmhuy/flight-radar-tampermonkey-scripts/raw/main/Flight%20radar.user.js
+// @updateURL    https://github.com/nnmhuy/flight-radar-tampermonkey-scripts/raw/main/Flight%20radar.user.js
 // ==/UserScript==
 
+// test auto update
 (function() {
     'use strict';
 
