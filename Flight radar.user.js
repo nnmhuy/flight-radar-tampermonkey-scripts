@@ -14,8 +14,8 @@
 (function() {
     'use strict';
 
+
     // TODO: static t48 position on map
-    // TODO: caching flight route (extension: save and load by json)
     // set global css
     var style=document.createElement('style');
     const cssText = `\
@@ -137,8 +137,6 @@
 
     const calculateLatLongPxRatio = () => {
         // calculate base on globalLatLongKmRatio and globalKmPxRatio
-        //console.log('globalLatLongKmRatio', globalLatLongKmRatio)
-        //console.log('globalKmPxRatio', globalKmPxRatio)
         return {
             lat: globalLatLongKmRatio.lat * globalKmPxRatio,
             long: globalLatLongKmRatio.long * globalKmPxRatio
@@ -164,10 +162,6 @@
 
     const getT48Pos = (tsnPos, latLongPxRatio) => {
         // calculate base on screen width and height, t48 will be in the middle of screen
-        /*const posByScreen = {
-            x: screen.width / 2,
-            y: screen.height / 2
-        };*/
         let containerNode = document.getElementsByClassName("gm-style")[0].childNodes[1]
 
         const posByScreen = {
@@ -287,6 +281,7 @@
                 default:
                     // code block
             }
+            //label.setAttribute("style", "background: " + '#'+(Math.random()*0xFFFFFF<<0).toString(16) + "; color: white;");
         }
     }
 
@@ -336,6 +331,9 @@
                 default:
                     // code block
             }
+            // random color
+            //aircraftDotNode.style.setProperty("border-bottom-color", '#'+(Math.random()*0xFFFFFF<<0).toString(16));
+            //aircraftVectorNode.style.setProperty("background-color", '#'+(Math.random()*0xFFFFFF<<0).toString(16));
             if (flightId == globalVipFlightId) {
                 aircraftDotNode.style.setProperty("border-bottom-color", "#34ebdb");
                 aircraftVectorNode.style.setProperty("background-color", "#34ebdb");
