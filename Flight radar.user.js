@@ -369,7 +369,7 @@
         globalLatLongPxRatio = calculateLatLongPxRatio()
 
         let t48Pos = globalT48Pos = getT48Pos();
-        let rootNode = document.getElementsByClassName("gm-style")[0].childNodes[1]
+        let rootNode = document.getElementsByClassName("gm-style")[0]
         const t48NodeExist = document.getElementById("t48");
         if (!t48NodeExist) {
             rootNode.appendChild(t48Node);
@@ -378,15 +378,16 @@
         // show t48 center
         t48Node.style.setProperty("left", JSON.stringify(t48Pos.x) + "px");
         t48Node.style.setProperty("top", JSON.stringify(t48Pos.y) + "px");
+        t48Node.style.setProperty("pointer-events", "none");
 
 
         // show cl cicles
-        let containerNode = document.getElementsByClassName("gm-style")[0].childNodes[1]
+        let containerNode = document.getElementsByClassName("gm-style")[0]
         let rNode = document.getElementById("rNode")
         if (!!!rNode) {
             rNode = document.createElement("div");
             rNode.setAttribute("id", "rNode");
-            rNode.setAttribute("style", "display: inline-block; width: 100vw; height: 100vh; z-index: 1; position: fixed; " )
+            rNode.setAttribute("style", "display: inline-block; width: 100vw; height: 100vh; z-index: 1; position: fixed; pointer-events: none;" )
             containerNode.appendChild(rNode);
         }
         const getRadiusRoundDiv = (t48Pos, rSize) => {
