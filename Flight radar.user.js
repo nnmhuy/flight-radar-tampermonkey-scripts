@@ -42,7 +42,7 @@
         .aircraft_labels {\
             background-color: transparent !important;\
         }\
-        .aircraft_labels > span {\
+        .aircraft_labels > div > span {\
             opacity: 0;\
         }\
         .aircraft-dot {\
@@ -210,6 +210,7 @@
 
                 const departure = flight[11];
                 const arrival = flight[12];
+
                 let domesticLocationCount = 0;
                 domesticLocationCount += domesticAirports.includes(departure);
                 domesticLocationCount += domesticAirports.includes(arrival);
@@ -261,6 +262,7 @@
         for (let label of labels){
             let flightId = label.innerText;
             const flightType = mapIdToType[flightId] || cacheMapIdToType[flightId]
+
             switch(flightType) {
                 case 5:
                     // transit
@@ -289,12 +291,12 @@
     const setAircraftVectorColor = () => {
         let labels = document.getElementsByClassName("aircraft_labels") || [];
         for (let label of labels){
-            let flightId = label.childNodes[0].innerText;
+            let flightId = label.childNodes[1].childNodes[0].innerText;
             const flight = mapIdToFlight[flightId];
             let onGround = false
             if (!!flight && flight.length > 14) onGround = (flight[14] === 1)
             // create aircraft dot node if not existed
-            if (label.childNodes.length < 2 || !label.childNodes[1].classList.contains("aircraft-dot")) {
+            if (label.childNodes.length < 3 || !label.childNodes[2].classList.contains("aircraft-dot")) {
                 const aircraftDotNode = document.createElement("div");
                 aircraftDotNode.classList.add('aircraft-dot');
                 const aircraftVectorNode = document.createElement("div");
@@ -302,7 +304,7 @@
                 aircraftDotNode.appendChild(aircraftVectorNode);
                 label.appendChild(aircraftDotNode);
             }
-            let aircraftDotNode = label.childNodes[1];
+            let aircraftDotNode = label.childNodes[2];
             let aircraftVectorNode = aircraftDotNode.childNodes[0];
 
 
