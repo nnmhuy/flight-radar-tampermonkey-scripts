@@ -252,7 +252,7 @@
         await getFlightData(mapBounds).then(() => {
             //setAriplanesColor()
         });
-    },1000)
+    },60000)
 
 
 
